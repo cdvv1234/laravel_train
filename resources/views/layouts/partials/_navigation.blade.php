@@ -19,7 +19,7 @@
                     <a href='/'>Home</a>
                 </li>
                 <li>
-                    <a href='/about'>最新消息</a>
+                    <a href='/blog'>最新消息</a>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">數位建設</a>
                   <ul class="dropdown-menu">
@@ -33,16 +33,13 @@
                     <a href='/show'>成果展示</a>
                 </li>
                 <li>
-                    <a href='/blog'>檔案上傳</a>
+                    <a href='/upload'>檔案上傳</a>
                 </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">相關連結</a>
-                  <ul class="dropdown-menu">
-                   <li><a href='/about'>檔案下載</a></li>
-                   <li><a href='/blog'>相關單位</a></li>
-                  </ul>
-               </li>
                 <li>
-                    <a href='/'>Contact us</a>
+                    <a href='/about'>相關連結</a>
+                </li>
+                <li>
+                    <a href='/contact'>Contact us</a>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','blog')
+@section('title','聯絡資訊')
 @section('content')
         <!-- /.container -->
     </nav>

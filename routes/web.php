@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
 Route::get('/about', function () {
     return view('about');
@@ -26,3 +26,9 @@ Route::get('/contact', function () {
 Route::get('/show', function () {
     return view('show');
 });
+Route::get('/upload','FileController@index');
+Route::post('/upload','FileController@store');
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
