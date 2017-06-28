@@ -36,7 +36,7 @@
                     <a href='/upload'>檔案上傳</a>
                 </li>
                 <li>
-                    <a href='/about'>相關連結</a>
+                    <a href='/down'>相關連結</a>
                 </li>
                 <li>
                     <a href='/contact'>Contact us</a>

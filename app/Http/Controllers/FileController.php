@@ -40,12 +40,31 @@ class FileController extends Controller
              'myFile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
-    $filename = $request->file('myFile')->getClientOriginalName();
-    $request->myFile->move(public_path('storage'),$filename);
+  //  $filename = $request->file('myFile')->getClientOriginalName();
+    //$request->myFile->move(public_path('storage'),$filename);
+    //Storage::putFile('/storage',$request->file('myFile'));
+    //是否傳遞的資料有檔案
+   if ($request->hasFile('myFile'))
+   {
+        //基礎檔案描述
+        $data['file_name'] = $request->file('myFile')->getClientOriginalName();
+        $data['file_extension'] = $request->file('myFile')->getClientOriginalExtension();
+        $data['file_path'] = $request->file('myFile')->getRealPath();
+        $data['file_size'] = $request->file('myFile')->getSize();
+        $data['file_mime_type'] = $request->file('myFile')->getMimeType();
 
-    return redirect('/upload');
+        //上傳資料夾（路徑）
+        $str_destination_path = public_path('storage');
+
+        //移動檔案到該資料夾
+        $request->file('myFile')->move( $str_destination_path, $request->file('myFile')->getClientOriginalName() );
+
+
+        return redirect('/upload')->with(['flash_message'=>'上傳成功喔!']);
 
     }
+
+  }
 
 
     /**

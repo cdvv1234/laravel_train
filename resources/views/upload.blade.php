@@ -11,6 +11,9 @@
                       <p>{{$error}}</p>
                     @endforeach
                   @endif
+                  @if (Session::has('flash_message'))
+                      <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+                    @endif
                       <form action="/upload" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                       <input type="file" name="myFile" id="myFile"/>
