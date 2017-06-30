@@ -37,15 +37,15 @@
                    <td>{{$down->title}}</td>
                    <td>{{$down->created_at}}</td>
                    <td>
-                     <a href="download/{{$down->filename}}" download="{{$down->filename}}">
-                              <button type="button" class="btn btn-primary">
-                                  <i class="glyphicon glyphicon-download">
-                                   Download
-                               </i>
+                   <a href="download/{{$down->filename}}" download="{{$down->filename}}">
+                        <button type="button" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-download">
+                             Download
+                        </i>
                       </button>
                       </a>
                      </td>
-                 </tr>
+              </tr>
              @endforeach
 
                   </tbody>

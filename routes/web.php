@@ -14,23 +14,24 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/about', function () {
+Route::get('about', function () {
     return view('about');
 });
-Route::get('/blog', function () {
+Route::get('blog', function () {
     return view('blog');
 });
-Route::get('/contact', function () {
+Route::get('contact', function () {
     return view('contact');
 });
-Route::get('/show', function () {
+Route::get('show', function () {
     return view('show');
 });
-Route::get('/down','DownController@index');
+Route::get('down','DownController@index');
+Route::post('down','DownController@store');
 
-Route::get('/upload','FileController@index');
-Route::post('/upload','FileController@store');
+Route::get('upload','FileController@index');
+Route::post('upload','FileController@store');
 
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');

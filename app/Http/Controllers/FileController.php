@@ -40,9 +40,6 @@ class FileController extends Controller
              'myFile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
-  //  $filename = $request->file('myFile')->getClientOriginalName();
-    //$request->myFile->move(public_path('storage'),$filename);
-    //Storage::putFile('/storage',$request->file('myFile'));
     //是否傳遞的資料有檔案
    if ($request->hasFile('myFile'))
    {

@@ -30,9 +30,7 @@ class DownController extends Controller
      */
     public function create()
     {
-        //
-        $downloads = DB::table('download')->get();
-        return view('down',compact('downloads'));
+
     }
 
     /**
@@ -43,7 +41,7 @@ class DownController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
