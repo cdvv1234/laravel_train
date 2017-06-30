@@ -26,9 +26,7 @@ Route::get('/contact', function () {
 Route::get('/show', function () {
     return view('show');
 });
-Route::get('/down', function () {
-    return view('down');
-});
+Route::get('/down','DownController@index');
 
 Route::get('/upload','FileController@index');
 Route::post('/upload','FileController@store');

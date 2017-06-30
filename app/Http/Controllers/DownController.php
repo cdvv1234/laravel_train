@@ -4,17 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use DB;
 
-class FileController extends Controller
+class DownController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('upload');
+
+        $downloads = DB::table('download')->get();
+        return view('down',compact('downloads'));
+        //$path =  public_path('download/');
+
+        //return response()->file($path.'4.5.3計畫v0621.docx');
     }
 
     /**
@@ -25,6 +31,8 @@ class FileController extends Controller
     public function create()
     {
         //
+        $downloads = DB::table('download')->get();
+        return view('down',compact('downloads'));
     }
 
     /**
@@ -35,37 +43,8 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-      //過濾檔案
-    $this->validate($request, [
-             'myFile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    ]);
-
-  //  $filename = $request->file('myFile')->getClientOriginalName();
-    //$request->myFile->move(public_path('storage'),$filename);
-    //Storage::putFile('/storage',$request->file('myFile'));
-    //是否傳遞的資料有檔案
-   if ($request->hasFile('myFile'))
-   {
-        //基礎檔案描述
-        $data['file_name'] = $request->file('myFile')->getClientOriginalName();
-        $data['file_extension'] = $request->file('myFile')->getClientOriginalExtension();
-        $data['file_path'] = $request->file('myFile')->getRealPath();
-        $data['file_size'] = $request->file('myFile')->getSize();
-        $data['file_mime_type'] = $request->file('myFile')->getMimeType();
-
-        //上傳資料夾（路徑）
-        $str_destination_path = public_path('storage');
-
-        //移動檔案到該資料夾
-        $request->file('myFile')->move( $str_destination_path, $request->file('myFile')->getClientOriginalName() );
-
-
-        return redirect('/upload')->with(['flash_message'=>'上傳成功喔!']);
-
+        //
     }
-
-  }
-
 
     /**
      * Display the specified resource.
@@ -110,9 +89,5 @@ class FileController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function down(){
-
     }
 }
